@@ -1,0 +1,33 @@
+.hero {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+#board-container {
+    background-color: white;
+    height: 550px;
+    width: 550px;
+}
+
+#board {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-aroun;
+}
+.boardSpot {
+    /* display: none; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    width: 31.8%;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    border: solid black 4px;
+    /* border-bottom: solid black 8px; */
+    /* width: 150px; */
+    text-align: center;
+}
