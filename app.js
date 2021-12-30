@@ -5,10 +5,10 @@ const displayController = (() => {
 })();
 const gameBoard = (() => {
     let counter = 0;
-    let board = ['O', 'X', 'O', 
-                 'X', 'O', 'X',
-                 'X', 'O', 'X'];
-    boardSpot.forEach(spot => {
+    let board = ['', '', '', 
+                 '', '', '',
+                 '', '', ''];
+    boardEle.forEach(spot => {
         let spotChoice = document.createElement('p')
         spotChoice.classList.add('spotChoice');
         spotChoice.setAttribute('data-attritube', counter)
