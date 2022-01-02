@@ -1,9 +1,19 @@
+#header {
+    display: flex;
+    gap: 15px;
+    margin: 50px;
+    width: 100%;
+    justify-content: center;
+}
+#winner {
+    /* margin-right: 200px; */
+}
 .hero {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
 }
 #board-container {
     background-color: white;
@@ -19,15 +29,24 @@
     align-content: space-aroun;
 }
 .boardSpot {
-    /* display: none; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-content: center; */
     width: 31.8%;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     border: solid black 4px;
-    /* border-bottom: solid black 8px; */
-    /* width: 150px; */
+    border-left: solid black 6px;
+    border-right: solid black 6px;
     text-align: center;
+    font-size: 50px;
+}
+.nb-t {
+    border-top: none;
+}
+.nb-r {
+    border-right: none;
+}
+.nb-b {
+    border-bottom: none;
+}
+.nb-l {
+    border-left: none;
 }
