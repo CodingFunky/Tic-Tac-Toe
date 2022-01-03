@@ -31,13 +31,12 @@
     align-content: space-aroun; */
 }
 .boardSpot {
+    max-height: 188px;
+    min-height: 170px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 31.8%;
-    
-    padding-top: 55px;
-    padding-bottom: 55px;
     border: solid black 4px;
     border-left: solid black 6px;
     border-right: solid black 6px;
