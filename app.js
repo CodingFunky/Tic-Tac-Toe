@@ -16,47 +16,50 @@ const computer = (sign, name) => {
     const makeMove = () => {
         let board = gameBoard.board;
         if (winnerEle.textContent != 'Results') return;
-        if (board[0] === board[1] && board[2] === '' && board[0] === computerPlayer) {
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            // let dataAttr = board.indexOf(board[2]);
-            let spot = document.querySelector('[data-attritube="2"]');
-            displayController.update(spot);
-        }else if (board[0] === board[4] && board[8] === '' && board[0] === computerPlayer) {
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="8"]');
-            displayController.update(spot);
-        }else if (board[0] === board[3] && board[6] === '' && board[0] === computerPlayer) {
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="6"]');
-            displayController.update(spot);
-        }else if (board[1] === board[4] && board[7] === '' && board[1] === computerPlayer){
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="7"]');
-            displayController.update(spot);
-        }else if (board[2] === board[4] && board[6] === '' && board[2] === computerPlayer) {
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="6"]');
-            displayController.update(spot);
-        }else if (board[2] === board[5] && board[8] === '' && board[2] === computerPlayer) {
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="8"]');
-            displayController.update(spot);
-        }else if (board[3] === board[4] && board[5] === '' && board[3] === computerPlayer){
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="5"]');
-            displayController.update(spot);
-        }else if (board[6] === board[7] && board[8] === '' && board[6] === computerPlayer) {
-            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
-            console.log('I can Win!');
-            let spot = document.querySelector('[data-attritube="8"]');
-            displayController.update(spot);
+        // if (board[0] === board[1] && board[2] === '' && board[0] === computerPlayer) {
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     // let dataAttr = board.indexOf(board[2]);
+        //     let spot = document.querySelector('[data-attritube="2"]');
+        //     displayController.update(spot);
+        // }else if (board[0] === board[4] && board[8] === '' && board[0] === computerPlayer) {
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="8"]');
+        //     displayController.update(spot);
+        // }else if (board[0] === board[3] && board[6] === '' && board[0] === computerPlayer) {
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="6"]');
+        //     displayController.update(spot);
+        // }else if (board[1] === board[4] && board[7] === '' && board[1] === computerPlayer){
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="7"]');
+        //     displayController.update(spot);
+        // }else if (board[2] === board[4] && board[6] === '' && board[2] === computerPlayer) {
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="6"]');
+        //     displayController.update(spot);
+        // }else if (board[2] === board[5] && board[8] === '' && board[2] === computerPlayer) {
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="8"]');
+        //     displayController.update(spot);
+        // }else if (board[3] === board[4] && board[5] === '' && board[3] === computerPlayer){
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="5"]');
+        //     displayController.update(spot);
+        // }else if (board[6] === board[7] && board[8] === '' && board[6] === computerPlayer) {
+        //     if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+        //     console.log('I can Win!');
+        //     let spot = document.querySelector('[data-attritube="8"]');
+        //     displayController.update(spot);
+        // }
+        if (canIWin() === true) {
+            
         }
         else {
             if (winnerEle.textContent != 'Results') return;
@@ -86,7 +89,61 @@ const computer = (sign, name) => {
             return false;
         }
     }
-    return Object.assign({}, prototype, {makeMove, allSpotsTaken});
+    let canIWin = function() {
+        if (board[0] === board[1] && board[2] === '' && board[0] === computerPlayer) {
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            // let dataAttr = board.indexOf(board[2]);
+            let spot = document.querySelector('[data-attritube="2"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[0] === board[4] && board[8] === '' && board[0] === computerPlayer) {
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="8"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[0] === board[3] && board[6] === '' && board[0] === computerPlayer) {
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="6"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[1] === board[4] && board[7] === '' && board[1] === computerPlayer){
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="7"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[2] === board[4] && board[6] === '' && board[2] === computerPlayer) {
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="6"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[2] === board[5] && board[8] === '' && board[2] === computerPlayer) {
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="8"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[3] === board[4] && board[5] === '' && board[3] === computerPlayer){
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="5"]');
+            displayController.update(spot);
+            return true;
+        }else if (board[6] === board[7] && board[8] === '' && board[6] === computerPlayer) {
+            if (winnerEle.textContent != 'Results') return; //do this instead of allSpotsTaken?
+            console.log('I can Win!');
+            let spot = document.querySelector('[data-attritube="8"]');
+            displayController.update(spot);
+            return true;
+        }else {
+            return false;
+        }
+    }
+    return Object.assign({}, prototype, {makeMove, allSpotsTaken, canIWin});
 };
 
 let playerOne = Player('X', 'X');
