@@ -59,7 +59,9 @@ const computer = (sign, name) => {
         //     displayController.update(spot);
         // }
         if (canIWin() === true) {
-            
+
+        }else if (canILose() === true ) {
+
         }
         else {
             if (winnerEle.textContent != 'Results') return;
@@ -142,6 +144,9 @@ const computer = (sign, name) => {
         }else {
             return false;
         }
+    }
+    let canILose = function () {
+        
     }
     return Object.assign({}, prototype, {makeMove, allSpotsTaken, canIWin});
 };
